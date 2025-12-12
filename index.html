@@ -7,10 +7,11 @@
 
 <style>
   :root {
-    --bg: #02142b;
-    --neon: #00eaff;
+    --bg: #010b19;
+    --gold: #ffd700;
     --pink: #ff008c;
-    --gold: #ffe15c;
+    --cyan: #00eaff;
+    --gradient: linear-gradient(90deg, #00eaff, #ff00c8, #ffd700);
   }
 
   body {
@@ -19,90 +20,110 @@
     font-family: Arial, sans-serif;
     text-align: center;
     color: white;
-    padding: 0;
   }
 
-  /* Flicker neon XAN CASINO */
+  /* Gücləndirilmiş qızılı neon XAN CASINO */
   h1 {
-    margin-top: 35px;
-    font-size: 42px;
+    margin-top: 30px;
+    font-size: 48px;
     letter-spacing: 3px;
-    color: var(--neon);
-    text-shadow: 0 0 20px var(--neon);
-    animation: flicker 1.8s infinite alternate;
+    font-weight: bold;
+    color: var(--gold);
+    text-shadow:
+      0 0 15px var(--gold),
+      0 0 30px var(--gold),
+      0 0 45px var(--gold),
+      0 0 60px #b89b00;
+    animation: strongFlicker 1.3s infinite alternate;
   }
 
-  @keyframes flicker {
-    0% { opacity: 1; text-shadow: 0 0 28px var(--neon); }
-    45% { opacity: 0.4; text-shadow: 0 0 10px #005d66; }
-    50% { opacity: 1; text-shadow: 0 0 32px var(--neon); }
-    70% { opacity: 0.5; text-shadow: 0 0 12px #008fad; }
-    100% { opacity: 1; text-shadow: 0 0 25px var(--neon); }
+  @keyframes strongFlicker {
+    0%   { opacity: 1; text-shadow: 0 0 45px var(--gold); }
+    30%  { opacity: 0.6; text-shadow: 0 0 15px #775f00; }
+    60%  { opacity: 1; text-shadow: 0 0 55px var(--gold); }
+    100% { opacity: 0.5; text-shadow: 0 0 20px #6a5800; }
   }
 
   .subtext {
-    font-size: 18px;
-    margin-top: -10px;
+    font-size: 19px;
     color: var(--pink);
-    text-shadow: 0 0 12px var(--pink);
+    margin-top: -12px;
+    text-shadow: 0 0 18px var(--pink);
   }
 
   .desc {
     font-size: 16px;
     margin: 10px auto 25px;
-    color: var(--gold);
-    text-shadow: 0 0 12px var(--gold);
+    color: var(--cyan);
     width: 90%;
     max-width: 500px;
-    line-height: 1.4;
+    text-shadow: 0 0 14px var(--cyan);
   }
 
+  /* Neon buton bölməsi */
   .btn-box {
     width: 90%;
     max-width: 500px;
-    margin: 20px auto;
-    padding: 15px;
-    border-radius: 14px;
+    margin: 22px auto;
+    padding: 18px;
+    border-radius: 18px;
     background: rgba(0, 0, 0, 0.45);
-    box-shadow: 0 0 20px var(--neon), inset 0 0 20px var(--neon);
+    box-shadow:
+        0 0 25px var(--cyan),
+        inset 0 0 25px var(--cyan),
+        0 0 8px var(--cyan);
   }
 
+  /* Gradient + Glow neon butonlar */
   .btn {
     display: block;
     width: 100%;
     padding: 16px;
     margin-bottom: 10px;
-    background: rgba(0, 0, 0, 0.65);
-    border: 2px solid var(--neon);
+    background: var(--gradient);
+    border: 0;
     border-radius: 14px;
     text-decoration: none;
     color: white;
     font-size: 20px;
-    box-shadow: 0 0 18px var(--neon);
-    transition: .15s ease;
+    box-shadow: 0 0 25px #00cfff, 0 0 45px #ff00f7;
+    transition: 0.18s ease;
   }
 
+  /* Daha güclü hover */
   .btn:hover {
-    transform: scale(1.03);
-    box-shadow: 0 0 30px var(--neon), 0 0 50px var(--neon);
+    transform: scale(1.06);
+    box-shadow:
+      0 0 35px #00cfff,
+      0 0 60px #ff00f7,
+      0 0 90px #ffd700;
   }
 
-  .bonus {
-    margin-top: 8px;
+  /* Parıldayan xətt */
+  .glow-line {
+    width: 70%;
+    height: 3px;
+    margin: 20px auto -5px;
+    background: var(--gradient);
+    border-radius: 4px;
+    box-shadow: 0 0 22px #00eaff, 0 0 32px #ff00e1;
+  }
+
+  /* Ən aşağı məlumat bloku */
+  .info-box {
+    margin-top: 35px;
+    margin-bottom: 25px;
     font-size: 16px;
-    color: #ffe15c;
-    text-shadow: 0 0 10px #ffe15c;
+    color: var(--gold);
+    text-shadow: 0 0 18px var(--gold);
   }
 
-  .info {
-    font-size: 15px;
-    color: #9ad8ff;
-    margin-top: 5px;
-    text-shadow: 0 0 10px #008bb3;
+  .info-box div {
+    margin: 6px 0;
   }
 
   @media (max-width: 600px) {
-    h1 { font-size: 36px; }
+    h1 { font-size: 40px; }
     .btn { font-size: 18px; padding: 14px; }
   }
 </style>
@@ -118,25 +139,24 @@
   Tam güvənilir və tam etibarlı yeganə kazino
 </div>
 
+<div class="glow-line"></div>
+
 <div class="btn-box">
   <a class="btn" href="https://t.me/xancasino1" target="_blank">Telegram</a>
-  <div class="bonus">İlk depozit üçün 10% bonus</div>
-  <div class="info">Minimum depozit: 10 manat</div>
-  <div class="info">Minimum çıxarış: 30 manat</div>
 </div>
 
 <div class="btn-box">
   <a class="btn" href="https://wa.me/998934559606" target="_blank">Kod almaq üçün WhatsApp</a>
-  <div class="bonus">İlk depozit üçün 10% bonus</div>
-  <div class="info">Minimum depozit: 10 manat</div>
-  <div class="info">Minimum çıxarış: 30 manat</div>
 </div>
 
 <div class="btn-box">
   <a class="btn" href="https://fastloto.com" target="_blank">Fastloto.com</a>
-  <div class="bonus">İlk depozit üçün 10% bonus</div>
-  <div class="info">Minimum depozit: 10 manat</div>
-  <div class="info">Minimum çıxarış: 30 manat</div>
+</div>
+
+<div class="info-box">
+  <div>İlk depozit üçün 10% bonus</div>
+  <div>Minimum depozit: 10 manat</div>
+  <div>Minimum çıxarış: 30 manat</div>
 </div>
 
 </body>
