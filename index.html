@@ -10,64 +10,49 @@
 
 :root {
   --bg: #010b19;
-  --text: #ffffff;
   --gold: #ffd700;
   --pink: #ff008c;
   --cyan: #00eaff;
   --card: rgba(0,0,0,0.45);
-  --gradient: linear-gradient(90deg,#00eaff,#ff00c8,#ffd700);
-}
-
-.light {
-  --bg: #f4f7fb;
-  --text: #111;
-  --card: #ffffff;
 }
 
 body {
   margin: 0;
   background: var(--bg);
-  color: var(--text);
+  color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
-  animation: fadeIn .8s ease;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* DARK/LIGHT */
-.theme-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  background: var(--card);
-  padding: 8px 14px;
-  border-radius: 20px;
-  cursor: pointer;
-  box-shadow: 0 0 12px var(--cyan);
-  z-index: 10;
-}
-
-/* LOGO – YANIB SÖNƏN */
+/* 🔥 XAN CASINO – DAHA REAL NEON FLICKER */
 h1 {
   margin-top: 26px;
-  font-size: 46px;
-  letter-spacing: 3px;
+  font-size: 52px;
+  letter-spacing: 4px;
   color: var(--gold);
-  text-shadow: 0 0 20px var(--gold);
-  animation: flicker 1.4s infinite alternate;
+  text-shadow:
+    0 0 12px var(--gold),
+    0 0 28px var(--gold),
+    0 0 55px #ffea70,
+    0 0 90px #b89b00;
+  animation: neonFlicker 3.2s infinite;
 }
 
-@keyframes flicker {
-  0% { opacity: 1; }
-  50% { opacity: .6; }
+@keyframes neonFlicker {
+  0%   { opacity: 1; text-shadow: 0 0 55px var(--gold); }
+  4%   { opacity: .4; text-shadow: 0 0 12px #7a6400; }
+  6%   { opacity: 1; }
+  8%   { opacity: .6; }
+  10%  { opacity: 1; }
+  35%  { opacity: 1; }
+  38%  { opacity: .3; text-shadow: 0 0 10px #5c4b00; }
+  40%  { opacity: 1; }
+  72%  { opacity: 1; }
+  75%  { opacity: .5; }
+  78%  { opacity: 1; }
   100% { opacity: 1; }
 }
 
-/* XOŞ GƏLMİSİNİZ */
 .subtext {
   font-family: 'Pacifico', cursive;
   font-size: 20px;
@@ -76,7 +61,6 @@ h1 {
   text-shadow: 0 0 16px var(--pink);
 }
 
-/* AÇIQLAMA */
 .desc {
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
@@ -85,16 +69,15 @@ h1 {
   color: var(--cyan);
 }
 
-/* LINE */
 .glow-line {
   width: 70%;
   height: 3px;
   margin: 16px auto;
-  background: var(--gradient);
-  box-shadow: 0 0 16px var(--cyan);
+  background: linear-gradient(90deg,#00eaff,#ff00c8,#ffd700);
+  box-shadow: 0 0 18px var(--cyan);
 }
 
-/* BUTTONS */
+/* BUTTON BOX */
 .btn-box {
   width: 92%;
   max-width: 500px;
@@ -102,36 +85,41 @@ h1 {
   padding: 16px;
   border-radius: 18px;
   background: var(--card);
-  box-shadow: 0 0 20px var(--cyan);
 }
 
+/* BUTTONS */
 .btn {
-  position: relative;
-  overflow: hidden;
   display: block;
   padding: 16px;
   border-radius: 14px;
-  background: var(--gradient);
-  color: #fff;
   font-size: 20px;
   text-decoration: none;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: .2s ease;
 }
 
-/* WhatsApp ripple */
-.btn::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: rgba(255,255,255,0.6);
-  border-radius: 50%;
-  transform: scale(0);
-  animation: ripple 2.5s infinite;
+.btn-whatsapp {
+  background: linear-gradient(90deg,#00ff9c,#00c853);
+  box-shadow: 0 0 18px #00ff9c;
 }
 
-@keyframes ripple {
-  0% { transform: scale(0); opacity: .6; }
-  100% { transform: scale(15); opacity: 0; }
+.btn-telegram {
+  background: linear-gradient(90deg,#00bfff,#0066ff);
+  box-shadow: 0 0 18px #00bfff;
+}
+
+.btn-fastloto {
+  background: linear-gradient(90deg,#ff008c,#ffd700,#ff008c);
+  box-shadow:
+    0 0 25px #ffd700,
+    0 0 45px #ff008c;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }
 
 /* INFO */
@@ -141,7 +129,6 @@ h1 {
   color: var(--gold);
 }
 
-/* BONUS */
 .special-bonus {
   margin-top: 14px;
   padding: 14px;
@@ -153,22 +140,14 @@ h1 {
   box-shadow: 0 0 16px #ff008c;
 }
 
-.timer {
-  margin-top: 6px;
-  font-size: 15px;
-  color: var(--cyan);
-}
-
 @media (max-width:600px) {
-  h1 { font-size: 36px; }
+  h1 { font-size: 38px; }
   .btn { font-size: 18px; }
 }
 </style>
 </head>
 
 <body>
-
-<div class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</div>
 
 <h1>XAN CASINO</h1>
 
@@ -179,17 +158,17 @@ h1 {
 <div class="glow-line"></div>
 
 <div class="btn-box">
-  <a class="btn" href="https://wa.me/998934559606" target="_blank">
+  <a class="btn btn-whatsapp" href="https://wa.me/998934559606" target="_blank">
     Kod almaq üçün WhatsApp
   </a>
-</div>
 
-<div class="btn-box">
-  <a class="btn" href="https://t.me/xancasino1" target="_blank">Telegram</a>
-</div>
+  <a class="btn btn-telegram" href="https://t.me/xancasino1" target="_blank">
+    Telegram
+  </a>
 
-<div class="btn-box">
-  <a class="btn" href="https://fastloto.com" target="_blank">Fastloto.com</a>
+  <a class="btn btn-fastloto" href="https://fastloto.com" target="_blank">
+    Fastloto.com
+  </a>
 </div>
 
 <div class="info-box">
@@ -200,25 +179,8 @@ h1 {
   <div class="special-bonus">
     🎁 dayimi olan oyuncuların etdiyi 5-ci depozitdə<br>
     <strong>100% BONUS</strong>
-    <div class="timer" id="timer"></div>
   </div>
 </div>
-
-<script>
-function toggleTheme() {
-  document.body.classList.toggle("light");
-}
-
-let time = 24 * 60 * 60;
-setInterval(() => {
-  let h = Math.floor(time / 3600);
-  let m = Math.floor((time % 3600) / 60);
-  let s = time % 60;
-  document.getElementById("timer").innerHTML =
-    `Bitməsinə: ${h}s ${m}d ${s}s`;
-  time--;
-}, 1000);
-</script>
 
 </body>
 </html>
