@@ -6,179 +6,175 @@
 <title>Xan Casino</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
 
 :root {
   --bg: #010b19;
+  --text: #ffffff;
   --gold: #ffd700;
   --pink: #ff008c;
   --cyan: #00eaff;
-  --gradient: linear-gradient(90deg, #00eaff, #ff00c8, #ffd700);
+  --card: rgba(0,0,0,0.45);
+  --gradient: linear-gradient(90deg,#00eaff,#ff00c8,#ffd700);
+}
+
+.light {
+  --bg: #f4f7fb;
+  --text: #111;
+  --card: #ffffff;
 }
 
 body {
   margin: 0;
   background: var(--bg);
+  color: var(--text);
   font-family: Arial, sans-serif;
   text-align: center;
-  color: white;
-  animation: pageFade 0.9s ease forwards;
+  animation: fadeIn .8s ease;
 }
 
-/* Açılış fade */
-@keyframes pageFade {
+@keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Neon badge */
-.badge {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 6px 16px;
-  font-size: 14px;
-  color: white;
+/* DARK/LIGHT */
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  background: var(--card);
+  padding: 8px 14px;
   border-radius: 20px;
-  background: linear-gradient(90deg, #ff008c, #ffd700);
-  box-shadow: 0 0 12px #ff00c8, 0 0 22px #ffd700;
-  animation: badgeGlow 2.5s ease-in-out infinite;
+  cursor: pointer;
+  box-shadow: 0 0 12px var(--cyan);
+  z-index: 10;
 }
 
-@keyframes badgeGlow {
-  0%,100% { box-shadow: 0 0 12px #ff00c8; }
-  50% { box-shadow: 0 0 24px #ffd700; }
-}
-
+/* LOGO – YANIB SÖNƏN */
 h1 {
-  margin-top: 18px;
-  font-size: 48px;
+  margin-top: 26px;
+  font-size: 46px;
   letter-spacing: 3px;
-  font-weight: bold;
   color: var(--gold);
-  text-shadow:
-    0 0 15px var(--gold),
-    0 0 30px var(--gold),
-    0 0 45px var(--gold);
+  text-shadow: 0 0 20px var(--gold);
+  animation: flicker 1.4s infinite alternate;
 }
 
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: .6; }
+  100% { opacity: 1; }
+}
+
+/* XOŞ GƏLMİSİNİZ */
 .subtext {
-  font-size: 19px;
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
   color: var(--pink);
   margin-top: -10px;
   text-shadow: 0 0 16px var(--pink);
 }
 
+/* AÇIQLAMA */
 .desc {
+  font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  margin: 10px auto 22px;
-  color: var(--cyan);
-  width: 90%;
+  margin: 12px auto 22px;
   max-width: 500px;
-  text-shadow: 0 0 14px var(--cyan);
+  color: var(--cyan);
 }
 
+/* LINE */
 .glow-line {
   width: 70%;
   height: 3px;
-  margin: 18px auto -5px;
+  margin: 16px auto;
   background: var(--gradient);
-  border-radius: 4px;
-  box-shadow: 0 0 18px #00eaff;
+  box-shadow: 0 0 16px var(--cyan);
 }
 
+/* BUTTONS */
 .btn-box {
   width: 92%;
   max-width: 500px;
-  margin: 18px auto;
+  margin: 16px auto;
   padding: 16px;
   border-radius: 18px;
-  background: rgba(0,0,0,0.45);
-  box-shadow: 0 0 22px var(--cyan), inset 0 0 22px var(--cyan);
+  background: var(--card);
+  box-shadow: 0 0 20px var(--cyan);
 }
 
 .btn {
+  position: relative;
+  overflow: hidden;
   display: block;
-  width: 100%;
   padding: 16px;
-  margin-bottom: 10px;
-  background: var(--gradient);
   border-radius: 14px;
-  text-decoration: none;
-  color: white;
+  background: var(--gradient);
+  color: #fff;
   font-size: 20px;
-  box-shadow: 0 0 20px #00cfff, 0 0 40px #ff00f7;
-  transition: 0.2s ease;
+  text-decoration: none;
 }
 
-.btn:hover {
-  transform: scale(1.05);
+/* WhatsApp ripple */
+.btn::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255,255,255,0.6);
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 2.5s infinite;
 }
 
+@keyframes ripple {
+  0% { transform: scale(0); opacity: .6; }
+  100% { transform: scale(15); opacity: 0; }
+}
+
+/* INFO */
 .info-box {
-  margin-top: 30px;
-  margin-bottom: 28px;
+  margin: 26px auto;
   font-size: 16px;
   color: var(--gold);
-  text-shadow: 0 0 16px var(--gold);
 }
 
-.info-box div {
-  margin: 6px 0;
-}
-
-/* Xüsusi bonus */
+/* BONUS */
 .special-bonus {
   margin-top: 14px;
   padding: 14px;
   font-family: 'Pacifico', cursive;
   font-size: 18px;
-  color: #ff4dd2;
   background: rgba(255,0,140,0.1);
   border-radius: 14px;
-  text-shadow: 0 0 12px #ff4dd2;
-  animation: softPulse 2.4s ease-in-out infinite;
+  color: #ff4dd2;
+  box-shadow: 0 0 16px #ff008c;
 }
 
-.special-bonus strong {
-  color: #ffd700;
+.timer {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--cyan);
 }
 
-/* Bonus ikonu */
-.bonus-icon {
-  display: inline-block;
-  margin-right: 6px;
-  animation: iconBounce 1.8s ease-in-out infinite;
-}
-
-@keyframes softPulse {
-  0%,100% { transform: scale(1); }
-  50% { transform: scale(1.04); }
-}
-
-@keyframes iconBounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
-
-@media (max-width: 600px) {
-  h1 { font-size: 38px; }
-  .btn { font-size: 18px; padding: 14px; }
-  .special-bonus { font-size: 17px; }
+@media (max-width:600px) {
+  h1 { font-size: 36px; }
+  .btn { font-size: 18px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="badge">🔥 Xüsusi Təklif</div>
+<div class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</div>
 
 <h1>XAN CASINO</h1>
 
-<div class="subtext">xan casinoya xoş gəlmisiniz</div>
+<div class="subtext">Xan kazinoya Xoş Gəlmisiniz</div>
 
-<div class="desc">
-  Tam güvənilir və tam etibarlı yeganə kazino
-</div>
+<div class="desc">⭐ Tam güvənilir və tam etibarlı yeganə kazino</div>
 
 <div class="glow-line"></div>
 
@@ -202,11 +198,27 @@ h1 {
   <div>Minimum çıxarış: 30 manat</div>
 
   <div class="special-bonus">
-    <span class="bonus-icon">🎁</span>
-    dayimi olan oyuncuların etdiyi 5-ci depozitdə<br>
+    🎁 dayimi olan oyuncuların etdiyi 5-ci depozitdə<br>
     <strong>100% BONUS</strong>
+    <div class="timer" id="timer"></div>
   </div>
 </div>
+
+<script>
+function toggleTheme() {
+  document.body.classList.toggle("light");
+}
+
+let time = 24 * 60 * 60;
+setInterval(() => {
+  let h = Math.floor(time / 3600);
+  let m = Math.floor((time % 3600) / 60);
+  let s = time % 60;
+  document.getElementById("timer").innerHTML =
+    `Bitməsinə: ${h}s ${m}d ${s}s`;
+  time--;
+}, 1000);
+</script>
 
 </body>
 </html>
