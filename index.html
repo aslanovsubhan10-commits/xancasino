@@ -6,7 +6,7 @@
 <title>Xan Casino</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
   --bg: #010b19;
@@ -38,17 +38,11 @@ h1 {
 }
 
 @keyframes neonFlicker {
-  0%   { opacity: 1; text-shadow: 0 0 55px var(--gold); }
-  4%   { opacity: .4; text-shadow: 0 0 12px #7a6400; }
+  0%   { opacity: 1; }
+  4%   { opacity: .4; }
   6%   { opacity: 1; }
-  8%   { opacity: .6; }
-  10%  { opacity: 1; }
-  35%  { opacity: 1; }
-  38%  { opacity: .3; text-shadow: 0 0 10px #5c4b00; }
+  38%  { opacity: .3; }
   40%  { opacity: 1; }
-  72%  { opacity: 1; }
-  75%  { opacity: .5; }
-  78%  { opacity: 1; }
   100% { opacity: 1; }
 }
 
@@ -112,10 +106,8 @@ h1 {
     0 0 25px #ffd700,
     0 0 45px #ff008c;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
-/* YENI BALACA BUTTON */
 .btn-card {
   background: linear-gradient(90deg,#3a3a3a,#6b5b95);
   box-shadow: 0 0 14px rgba(155,120,255,0.6);
@@ -133,15 +125,17 @@ h1 {
   color: var(--gold);
 }
 
+/* DƏYİŞDİRİLMİŞ – DAHA OXUNAN BONUS */
 .special-bonus {
   margin-top: 14px;
   padding: 14px;
-  font-family: 'Pacifico', cursive;
-  font-size: 18px;
-  background: rgba(255,0,140,0.1);
+  font-family: 'Poppins', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  background: rgba(255,215,0,0.08);
   border-radius: 14px;
-  color: #ff4dd2;
-  box-shadow: 0 0 16px #ff008c;
+  color: #ffd700;
+  box-shadow: 0 0 14px rgba(255,215,0,0.6);
 }
 
 @media (max-width:600px) {
@@ -162,7 +156,9 @@ h1 {
 <div class="glow-line"></div>
 
 <div class="btn-box">
-  <a class="btn btn-whatsapp" href="https://wa.me/998934559606?text=SALAM%20KOD%20ALMAQ%20ISDIYIREM%20KART%20DEYERDIZ" target="_blank">
+
+  <!-- WHATSAPP – SMS DƏYİŞDİ -->
+  <a class="btn btn-whatsapp" href="https://wa.me/998934559606?text=Salam%20depozit%20etmek%20isdiyirdim%20zehmet%20olmasa%20kart%20atardiz!" target="_blank">
     Kod almaq üçün WhatsApp
   </a>
 
@@ -170,14 +166,15 @@ h1 {
     Telegram
   </a>
 
-  <!-- YENI LINK -->
-  <a class="btn btn-card" href="https://wa.me/998934559606?text=KARTIMI%20SATMAQ%20ISDEYIREM" target="_blank">
-    30 manata Leo Bank / Unibank kartları alınır
-  </a>
-
   <a class="btn btn-fastloto" href="https://fastloto.com" target="_blank">
     Fastloto.com
   </a>
+
+  <!-- EN SON – KART SATIŞI -->
+  <a class="btn btn-card" href="https://wa.me/998934559606?text=Salam%20men%20oz%20kartimi%20satmaq%20isdiyirdim!" target="_blank">
+    30 manata Leo Bank / Unibank kartları alınır
+  </a>
+
 </div>
 
 <div class="info-box">
@@ -186,7 +183,7 @@ h1 {
   <div>Minimum çıxarış: 30 manat</div>
 
   <div class="special-bonus">
-    🎁 dayimi olan oyuncuların etdiyi 5-ci depozitdə<br>
+    🎁 Daimi oyunçular üçün 5-ci depozitdə <br>
     <strong>100% BONUS</strong>
   </div>
 </div>
