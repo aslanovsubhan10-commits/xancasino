@@ -9,53 +9,79 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  --bg:#010b19;
-  --gold:#ffd700;
-  --card:rgba(0,0,0,.45);
+  --bg: #010b19;
+  --gold: #ffd700;
+  --pink: #ff008c;
+  --cyan: #00eaff;
+  --card: rgba(0,0,0,0.45);
 }
 
-body{
-  margin:0;
-  background:var(--bg);
-  color:#fff;
-  text-align:center;
-  font-family:Arial,sans-serif;
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-h1{
-  margin-top:22px;
-  font-size:42px;
-  color:var(--gold);
+h1 {
+  margin-top: 26px;
+  font-size: 52px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-shadow: 0 0 12px var(--gold),0 0 28px var(--gold);
 }
 
-.glow-line{
-  width:70%;
-  height:3px;
-  margin:14px auto;
-  background:linear-gradient(90deg,#00eaff,#ff00c8,#ffd700);
+.subtext {
+  font-family: 'Pacifico', cursive;
+  font-size: 20px;
+  color: var(--pink);
+  margin-top: -10px;
+  text-shadow: 0 0 16px var(--pink);
 }
+
+.desc {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  margin: 12px auto 10px;
+  max-width: 500px;
+  color: var(--cyan);
+}
+
+.status-line { font-size: 13px; opacity: .85; margin-top: 6px; }
+.status-live { color: #00ff9c; }
+.clock { font-size: 13px; color: #aaa; margin-top: 4px; }
+.glow-line { width:70%; height:3px; margin:16px auto; background:linear-gradient(90deg,#00eaff,#ff00c8,#ffd700); box-shadow:0 0 18px var(--cyan); }
+
+.features { font-size: 14px; opacity: .85; margin: 8px auto 6px; }
+.features span { margin: 0 6px; }
+
+.age { font-size: 13px; opacity: .6; margin-top: 6px; }
+
+.btn-box { width:92%; max-width:500px; margin:16px auto; padding:16px; border-radius:18px; background: var(--card); }
+.btn { display:flex; align-items:center; justify-content:center; gap:10px; padding:16px; border-radius:14px; font-size:20px; text-decoration:none; color:#fff; margin-bottom:10px; transition:.2s ease; }
+.btn-whatsapp { background: linear-gradient(90deg,#00ff9c,#00c853); box-shadow:0 0 18px #00ff9c; }
+.btn-instagram { background: linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045); box-shadow:0 0 18px rgba(253,29,29,0.6); }
+.btn-fastloto { background: linear-gradient(90deg,#ff008c,#ffd700,#ff008c); box-shadow:0 0 25px #ffd700,0 0 45px #ff008c; font-weight:bold; }
+.btn-card { background: linear-gradient(90deg,#3a3a3a,#6b5b95); box-shadow:0 0 14px rgba(155,120,255,0.6); font-size:14px; padding:10px; }
+.btn:hover { transform: scale(1.05); }
+
+.info-box { margin:18px auto 8px; font-size:16px; color:var(--gold); }
+.special-bonus { margin-top:14px; padding:14px; font-family:'Poppins',sans-serif; font-size:17px; font-weight:600; background:rgba(255,215,0,0.08); border-radius:14px; color:#ffd700; box-shadow:0 0 14px rgba(255,215,0,0.6); }
+.stats { font-size:12px; opacity:.6; margin-top:8px; }
+
+@media (max-width:600px) { h1{font-size:38px;} .btn{font-size:18px;} }
 
 /* BONUS ÇARXI */
-.wheel-box{
+.wheel-box {
   margin:20px auto;
   padding:16px;
   width:280px;
-  background:var(--card);
+  background: var(--card);
   border-radius:18px;
-  box-shadow:0 0 22px rgba(255,215,0,.5);
+  box-shadow:0 0 25px rgba(255,215,0,0.4);
 }
-
-.pointer{
-  color:red;
-  font-size:20px;
-}
-
-#wheel{
-  width:240px;
-  height:240px;
-  margin:10px auto;
-  border-radius:50%;
-  border:6px solid gold;
+#wheel { width:240px; height:240px; margin:10px auto; border-radius:50%; border:6px solid gold;
   background:conic-gradient(
     #16a34a 0deg 60deg,
     #22c55e 60deg 120deg,
@@ -64,65 +90,30 @@ h1{
     #f59e0b 240deg 300deg,
     #dc2626 300deg 360deg
   );
-  transition:transform 4s ease-out;
+  transition: transform 4s ease-out;
 }
-
-.spin-btn{
-  padding:12px;
-  font-size:16px;
-  background:gold;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-#limitMsg{
-  display:none;
-  margin-top:10px;
-  color:#ff6b6b;
-  font-size:14px;
-}
-
-#resultBtn{
-  display:none;
-  margin-top:12px;
-  padding:12px;
-  background:linear-gradient(90deg,#00ff9c,#00c853);
-  border-radius:12px;
-  color:#000;
-  font-weight:bold;
-  text-decoration:none;
-}
-
-/* LINKLƏR */
-.btn-box{
-  width:92%;
-  max-width:500px;
-  margin:18px auto;
-  padding:16px;
-  background:var(--card);
-  border-radius:18px;
-}
-
-.btn{
-  display:block;
-  padding:16px;
-  margin-bottom:10px;
-  border-radius:14px;
-  color:#fff;
-  text-decoration:none;
-  font-size:18px;
-}
-
-.btn-whatsapp{background:#00c853;}
-.btn-instagram{background:#c13584;}
-.btn-fastloto{background:#ff008c;}
+.pointer { font-size:20px; color:red; }
+.spin-btn { margin-top:10px; padding:12px; font-size:16px; background:gold; border:none; border-radius:10px; cursor:pointer; }
+#resultBtn { display:none; margin-top:12px; padding:12px; background:linear-gradient(90deg,#00ff9c,#00c853); border-radius:12px; color:#000; font-weight:bold; text-decoration:none; }
+#limitMsg { display:none; margin-top:10px; color:#ff6b6b; font-size:14px; }
 </style>
 </head>
-
 <body>
 
 <h1>XAN CASINO</h1>
+<div class="subtext">Xan kazinoya Xoş Gəlmisiniz</div>
+<div class="desc">⭐ Tam güvənilir və tam etibarlı yeganə kazino</div>
+
+<div class="status-line status-live">● Canlı dəstək aktivdir</div>
+<div class="clock" id="clock">⏰ --:--:--</div>
+
+<div class="features">
+  <span>➤ Sürətli çıxarış</span>
+  <span>➤ Təhlükəsiz</span>
+  <span>➤ Orijinal oyunlar</span>
+</div>
+
+<div class="age">🔞 18+ Yalnız yetkinlər üçün</div>
 <div class="glow-line"></div>
 
 <!-- BONUS ÇARXI -->
@@ -139,46 +130,62 @@ h1{
   <a class="btn btn-whatsapp" href="https://wa.me/998934559606" target="_blank">🟢 WhatsApp</a>
   <a class="btn btn-instagram" href="https://www.instagram.com/xan.casino" target="_blank">📸 Instagram</a>
   <a class="btn btn-fastloto" href="https://fastloto.com" target="_blank">🎰 Fastloto</a>
+  <a class="btn btn-card" href="https://wa.me/998934559606" target="_blank">💳 30 manata Leo Bank / Unibank kartları alınır</a>
+</div>
+
+<div class="info-box">
+  <div>İlk depozit üçün 10% bonus</div>
+  <div>Minimum depozit: 10 manat</div>
+  <div>Minimum çıxarış: 30 manat</div>
+
+  <div class="special-bonus">
+    🎁 Daimi oyunçular üçün 5-ci depozitdə <br>
+    <strong>100% BONUS</strong>
+  </div>
+
+  <div class="stats" id="stats">🔥 Bugün 127 aktiv istifadəçi</div>
 </div>
 
 <script>
-const today = new Date().toDateString();
-const lastSpin = localStorage.getItem("spinDate");
+/* SAAT */
+function updateClock() {
+  const d = new Date();
+  document.getElementById('clock').innerText = '⏰ ' + d.toLocaleTimeString('az-AZ');
+}
+setInterval(updateClock,1000); updateClock();
+
+/* KLIK STATISTIKASI */
+let clicks=127;
+document.querySelectorAll('.track').forEach(b=>{
+  b.addEventListener('click',()=>{
+    clicks++;
+    document.getElementById('stats').innerText='🔥 Bugün '+clicks+' aktiv istifadəçi';
+  });
+});
+
+/* BONUS ÇARXI GÜNDƏ 1 DƏFƏ */
+const today=new Date().toDateString();
+const lastSpin=localStorage.getItem("spinDate");
 
 function spin(){
-  if(lastSpin === today){
+  if(lastSpin===today){
     document.getElementById("limitMsg").style.display="block";
     return;
   }
-
   const wheel=document.getElementById("wheel");
   const resultBtn=document.getElementById("resultBtn");
 
   const chances=[
-    {b:"10%",w:35},
-    {b:"15%",w:30},
-    {b:"20%",w:20},
-    {b:"30%",w:8},
-    {b:"40%",w:5},
-    {b:"50%",w:2}
+    {b:"10%",w:35},{b:"15%",w:30},{b:"20%",w:20},
+    {b:"30%",w:8},{b:"40%",w:5},{b:"50%",w:2}
   ];
 
   let pool=[];
-  chances.forEach(c=>{
-    for(let i=0;i<c.w;i++) pool.push(c.b);
-  });
+  chances.forEach(c=>{for(let i=0;i<c.w;i++) pool.push(c.b);});
 
   const win=pool[Math.floor(Math.random()*pool.length)];
 
-  const angles={
-    "10%":330,
-    "15%":30,
-    "20%":90,
-    "30%":150,
-    "40%":210,
-    "50%":270
-  };
-
+  const angles={"10%":330,"15%":30,"20%":90,"30%":150,"40%":210,"50%":270};
   wheel.style.transform="rotate("+(360*6+angles[win])+"deg)";
 
   setTimeout(()=>{
@@ -190,6 +197,5 @@ function spin(){
   },4000);
 }
 </script>
-
 </body>
 </html>
